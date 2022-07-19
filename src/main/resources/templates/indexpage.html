@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
+    <div layout:fragment="mainContent">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>MODEL</th>
+                <th>PRICE</th>
+                <th>ENGINE VOLUME</th>
+                <th width="10%">DETAILS</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car : ${cars}">
+                    <td th:text="${car.id}"></td>
+                    <td th:text="${car.name}"></td>
+                    <td th:text="${car.model}"></td>
+                    <td th:text="${car.price}"></td>
+                    <td th:text="${car.engineVolume}"></td>
+                    <td>
+                        <a th:href="@{'/details/' + ${car.id}}" class="btn btn-primary btn-sm">DETAILS</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</html>
