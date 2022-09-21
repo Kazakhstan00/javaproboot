@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "t_cars")
@@ -29,4 +30,10 @@ public class Car {
 
     @Column(name="engine_volume")
     private double engineVolume;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Country country;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Category> categories;
 }

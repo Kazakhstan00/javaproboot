@@ -65,7 +65,7 @@ public class HomeController {
 
     }
 
-    @GetMapping(value = "/details/{itemId}")
+    @GetMapping(value = "/details11/{itemId}")
     public String detailsPage(@PathVariable(name = "itemId") Long id,
                               Model model){
         Item item = DBManager.getItem(id);

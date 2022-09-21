@@ -9,6 +9,8 @@
                 <th>MODEL</th>
                 <th>PRICE</th>
                 <th>ENGINE VOLUME</th>
+                <th>COUNTRY</th>
+<!--                <th>CATEGORIES</th>-->
                 <th width="10%">DETAILS</th>
             </tr>
             </thead>
@@ -19,6 +21,10 @@
                     <td th:text="${car.model}"></td>
                     <td th:text="${car.price}"></td>
                     <td th:text="${car.engineVolume}"></td>
+                    <td th:text="${car.country.name + ' - ' + car.country.code}"></td>
+<!--                    <td>-->
+<!--                        <span style="display: block" th:each="cat : ${car.categories}" th:text="${cat.name}"></span>-->
+<!--                    </td>-->
                     <td>
                         <a th:href="@{'/details/' + ${car.id}}" class="btn btn-primary btn-sm">DETAILS</a>
                     </td>
